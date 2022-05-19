@@ -51,6 +51,6 @@ if __name__ == "__main__":
         os._exit(-1)
 
     # start reporting
-    ok = apply(curr_location, log, auth, True)
+    ok = apply(curr_location, log, auth, force=True)
     if not ok:
         os._exit(-1)
