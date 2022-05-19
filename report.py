@@ -58,7 +58,9 @@ def apply(curr_location, logger, auth: NjuUiaAuth, covidTestMethod='YESTERDAY', 
 
         url = URL_JKDK_APPLY + '?' + urlencode(param)
 
-        if not has_applied or force:
+        log.info(has_applied + "  " + force)
+
+        if (not has_applied) or force:
             logger.info('正在打卡')
             auth.session.get(url, headers=headers)
 
